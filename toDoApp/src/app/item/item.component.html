@@ -1,0 +1,8 @@
+<span
+  class="endItem"
+  [class.checked]="isItemSelected"
+  (click)="lineTrough()"
+>
+  {{ label }}
+  <span class="close" (click)="removeItem()"><i class="fa fa-recycle" aria-hidden="true"></i></span>
+</span>
