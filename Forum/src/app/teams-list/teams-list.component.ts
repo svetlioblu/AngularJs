@@ -9,9 +9,10 @@ import { ApiService } from '../api.service';
 export class TeamsListComponent implements OnInit {
   //Inject apiService
   constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
     this.apiService.getThemes().subscribe((themes) => {
-      console.log(themes);
+      console.log({themes});
     });
   }
 }
