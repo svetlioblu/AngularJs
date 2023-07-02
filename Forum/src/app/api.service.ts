@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import HttpClient module
+//import HttpClient module and environments
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 @Injectable({
@@ -15,7 +15,7 @@ export class ApiService {
   }
   getPosts(limit?: number) {
     const { appUrl } = environment;
-    const limitFilter = limit ? `limit=${limit}` : '';
+    const limitFilter = limit ? `?limit=${limit}` : '';
 
     return this.http.get(`${appUrl}/posts${limitFilter}`);
   }
