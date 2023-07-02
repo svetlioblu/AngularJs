@@ -15,6 +15,7 @@ export class TeamsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getThemes().subscribe((themes) => {
+
       this.themesList = themes;
     });
   }
