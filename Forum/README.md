@@ -14,7 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Functionality
 
-- Resources are imported with the angular architecture. There is used ApiService with observables requesting data from server and MongoDb
+- Resources are imported with the angular architecture. There is used ApiService with observables requesting data from server and MongoDb.
 - Loads dynamic Themes Remotly
 - Loads dynamic Posts Remotly
 - Loadrer
