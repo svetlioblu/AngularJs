@@ -9,6 +9,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 // import http module
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
     MainComponent,
     TeamsListComponent,
     PostsListComponent,
+    HomeComponent,
   ],
   //Import the core and http module
   imports: [BrowserModule, CoreModule, HttpClientModule, SharedModule],
