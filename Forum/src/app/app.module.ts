@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserRoutingModule } from './user/user-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
   ],
   //Import the core and http module
-  imports: [BrowserModule, CoreModule, HttpClientModule, SharedModule, AppRoutingModule],
+  imports: [BrowserModule, CoreModule, HttpClientModule,
+    SharedModule, AppRoutingModule, UserRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

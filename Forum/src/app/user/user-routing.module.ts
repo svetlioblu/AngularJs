@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
-
+//1.add user related routs
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
@@ -16,4 +16,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule { }
+// 2. change class related name and import in related module user.module.ts
+export class UserRoutingModule { }
