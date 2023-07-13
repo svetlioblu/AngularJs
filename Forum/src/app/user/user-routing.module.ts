@@ -16,5 +16,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-// 2. change class related name and import in related module user.module.ts
+// 2. change class related name and import in related module user.module.ts + app.module.ts + add RouterModule in core.module.ts(parent)
 export class UserRoutingModule { }
