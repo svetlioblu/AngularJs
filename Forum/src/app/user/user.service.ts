@@ -7,7 +7,7 @@ import { User } from '../types/user';
   providedIn: 'root'
 })
 
-export class UserService {
+export class  UserService {
   user: User | undefined;
   USER_KEY = '[user]'
 
