@@ -18,7 +18,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - Loads dynamic Themes Remotly
 - Loads dynamic Posts Remotly
 - Loadrer
-- Login, logour, register user
+- Login, logout, register user
 - Profile page for logged user
 - Details themes on header click
 - Dynamic comments in theme detais
