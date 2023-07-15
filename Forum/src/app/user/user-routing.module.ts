@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthActivate } from '../core/guards/auth.activate';
-
+import { NotFoundComponent } from '../core/not-found/not-found.component';
 
 
 //1.add user related routs

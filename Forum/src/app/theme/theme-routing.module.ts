@@ -17,8 +17,6 @@ const routes: Routes = [
         ]
     },
     { path: 'add-theme', canActivate: [AuthActivate], component: NewThemeComponent }
-
-
 ];
 
 @NgModule({
