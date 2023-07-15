@@ -9,12 +9,12 @@ import { ApiService } from 'src/app/api.service';
 export class NewThemeComponent {
   constructor(private apiService: ApiService) { }
 
-  postThemeHandler(event: Event, name: string, post: string) {
+  postThemeHandler(event: Event, themeName: string, postText: string) {
     event.preventDefault()
-    console.log(name, post);
-    this.apiService.postTheme({ name, post }).subscribe(
-      response => {
-        console.log('Response:', response);
+    console.log(themeName, postText);
+    this.apiService.postTheme({ themeName, postText }).subscribe(
+      data => {
+        console.log('Response:', data);
         // Handle the response as needed
       },
       error => {

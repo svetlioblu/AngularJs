@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import HttpClient module and environments
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Theme } from './types/theme';
 import { Post } from './types/post';
@@ -26,8 +26,10 @@ export class ApiService {
     return this.http.get<Post[]>(`${appUrl}/posts${limitFilter}`);
   }
   postTheme(data: any) {
-    const { postUrl } = environment;
-    return this.http.post<Theme>(`${postUrl}/themes`, data);
+    const url = '/themes';
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this.http.post<Theme>(url, data, { headers });
   }
 
 }
