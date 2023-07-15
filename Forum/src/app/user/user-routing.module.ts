@@ -6,11 +6,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthActivate } from '../core/guards/auth.activate';
 
 
+
 //1.add user related routs
 const routes: Routes = [
     { path: 'login',  component: LoginComponent },
     { path: 'register',  component: RegisterComponent },
-    { path: 'profile',  component: ProfileComponent }
+    { path: 'profile',  component: ProfileComponent },
+  
 ];
 //canActivate: [AuthActivate] -> add guards in path
 @NgModule({

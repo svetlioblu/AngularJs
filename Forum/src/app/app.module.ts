@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FeatureModule } from './feature/feature.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   //Import the core and http module
   imports: [BrowserModule, CoreModule, HttpClientModule,
-    SharedModule, AppRoutingModule, UserRoutingModule,ThemeModule],
+    SharedModule, AppRoutingModule, UserRoutingModule, ThemeModule, FeatureModule],
   providers: [],
   bootstrap: [AppComponent],
 })
