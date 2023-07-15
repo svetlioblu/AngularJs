@@ -25,6 +25,9 @@ export class ApiService {
 
     return this.http.get<Post[]>(`${appUrl}/posts${limitFilter}`);
   }
-
+  postTheme(data: any) {
+    const { postUrl } = environment;
+    return this.http.post<Theme>(`${postUrl}/themes`, data);
+  }
 
 }
