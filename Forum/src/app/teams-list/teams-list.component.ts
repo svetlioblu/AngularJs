@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Theme } from '../types/theme';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-teams-list',
@@ -12,7 +13,13 @@ export class TeamsListComponent implements OnInit {
   isLoading: boolean = true;
 
   //Inject apiService
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private userService: UserService) { }
+  isSubscribed: boolean = false
+
+
+  get isLogged(): boolean {
+    return this.userService.isLogged
+  }
 
   ngOnInit(): void {
     this.apiService.getThemes().subscribe({
@@ -25,5 +32,11 @@ export class TeamsListComponent implements OnInit {
         console.error(`Error: ${err}`);
       },
     });
+  }
+
+  toggleSubscribeClass(button: HTMLButtonElement) {
+    this.isSubscribed = !this.isSubscribed
+    button.innerText = this.isSubscribed ? 'unsubscribe' : 'subscribe'
+    button.className = this.isSubscribed ?'unsubscribe':'subscribe'
   }
 }

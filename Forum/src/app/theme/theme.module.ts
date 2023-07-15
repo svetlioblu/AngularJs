@@ -5,7 +5,6 @@ import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 
 
-
 @NgModule({
   declarations: [
     NewThemeComponent,

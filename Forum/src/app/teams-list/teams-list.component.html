@@ -7,6 +7,7 @@
     <div *ngFor="let theme of themesList" class="theme-container">
       <div class="theme-name-wrapper">
         <div class="theme-name">
+          <!-- //todo using [] skince router use children -->
           <a [routerLink]="theme._id" class="normal">
             <h2>{{ theme.themeName }}</h2>
           </a>
@@ -22,7 +23,8 @@
               </div>
             </div>
             <div class="subscribers">
-              <!-- <button class="subscribe">Subscribe</button> -->
+              <button #subButton (click)="toggleSubscribeClass(subButton)" *ngIf="isLogged"
+                class="subscribe">subscribe</button>
               <p>
                 Subscribers: <span>{{ theme.subscribers.length }}</span>
               </p>
