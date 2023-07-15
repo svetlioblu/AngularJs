@@ -9,11 +9,15 @@ import { Post } from './types/post';
 })
 export class ApiService {
   // add HttpClient in the constructor
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getThemes() {
     const { appUrl } = environment;
     return this.http.get<Theme[]>(`${appUrl}/themes`);
+  }
+  getOneTheme(id: string) {
+    const { appUrl } = environment;
+    return this.http.get<Theme>(`${appUrl}/themes/${id}`);
   }
   getPosts(limit?: number) {
     const { appUrl } = environment;
@@ -21,4 +25,6 @@ export class ApiService {
 
     return this.http.get<Post[]>(`${appUrl}/posts${limitFilter}`);
   }
+
+
 }
