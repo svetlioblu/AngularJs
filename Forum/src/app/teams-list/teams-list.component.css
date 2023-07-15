@@ -1,4 +1,3 @@
-
 /* theme list item */
 
 .theme-container a {
@@ -29,6 +28,8 @@ p {
 
 .theme-title {
   padding: 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .theme-name {
@@ -65,4 +66,10 @@ p {
 
 time {
   font-weight: bold;
+}
+
+.welcome-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
