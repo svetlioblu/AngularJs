@@ -1,34 +1,39 @@
 <!-- homepage -->
 <div class="container">
-    <form class="login" action="" method="post">
+    <form class="login" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
         <fieldset>
             <h2>Login Form</h2>
 
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input #inputEmail class="input-error" type="email" name="email" id="email"
-                    placeholder="john.doe@gmail.com">
+                <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com" ngModel
+                    required #inputEmail="ngModel" [appEmail]="appEmailDomains">
             </p>
-            <p class="error">
-                Email is required!
-            </p>
-            <!-- <p class="error">
-                Email is not valid!
-            </p> -->
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+                <!-- use the default emmail validation if add email directive in inputEmail -->
+                <!-- <p class="error" *ngIf="inputEmail.errors?.['email']">Email is not valid!</p> -->
+                <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
+
+            </ng-container>
+            <!-- {{loginForm.value | json }}
+            <hr>
+            {{loginForm?.errors | json}} -->
 
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input #inputPassword type="password" name="password" id="password" placeholder="******">
+                <input type="password" name="password" id="password" placeholder="******" ngModel required minlength="5"
+                    #inputPassword="ngModel">
             </p>
-            <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
-
-            <button (click)="login(inputEmail.value,inputPassword.value)">Login</button>
+            <ng-container *ngIf="inputPassword.touched">
+                <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+                <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least
+                    {{inputPassword.errors?.['minlength'] ['requiredLength']}} characters!</p>
+            </ng-container>
+            <button [disabled]="loginForm.invalid"
+                [style]="{backgroundColor:loginForm.invalid?'grey':'blue',
+                border:loginForm.invalid?'1px solid red':'4px solid green'}">Login</button>
 
             <p class="text-center">
                 Have an account?
@@ -37,4 +42,7 @@
 
         </fieldset>
     </form>
+
 </div>
+
+<!-- [style]=" {border:loginForm.invalid?'1px solid black':'1px solid green'}" -->

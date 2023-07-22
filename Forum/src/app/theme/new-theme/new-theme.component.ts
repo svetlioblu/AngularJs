@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -9,18 +10,26 @@ import { ApiService } from 'src/app/api.service';
 export class NewThemeComponent {
   constructor(private apiService: ApiService) { }
 
-  postThemeHandler(event: Event, themeName: string, postText: string) {
-    event.preventDefault()
-    console.log(themeName, postText);
-    this.apiService.postTheme({ themeName, postText }).subscribe(
-      data => {
-        console.log('Response:', data);
-        // Handle the response as needed
-      },
-      error => {
-        console.error('Error:', error);
-        // Handle the error as needed
-      }
-    )
+  // postThemeHandler(event: Event, themeName: string, postText: string) {
+  //   event.preventDefault()
+  //   console.log(themeName, postText);
+  //   this.apiService.postTheme({ themeName, postText }).subscribe(
+  //     responce => {
+  //       console.log('Response:', responce);
+  //       // Handle the response as needed
+  //     },
+  //     error => {
+  //       console.error('Error:', error);
+  //       // Handle the error as needed
+  //     }
+  //   )
+  // }
+
+  newTeamSubmitHandler(newThemeForm: NgForm) {
+    if (newThemeForm.invalid) {
+      return
+    }
+    console.log(newThemeForm.value);
+
   }
 }

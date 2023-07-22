@@ -11,10 +11,10 @@ import { UserService } from '../user/user.service';
 export class TeamsListComponent implements OnInit {
   themesList: Theme[] = [];
   isLoading: boolean = true;
+  isSubscribed: boolean = false
 
   //Inject apiService
   constructor(private apiService: ApiService, private userService: UserService) { }
-  isSubscribed: boolean = false
 
 
   get isLogged(): boolean {

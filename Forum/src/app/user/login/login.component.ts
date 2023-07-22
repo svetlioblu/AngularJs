@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/costants';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private userService: UserService,private router:Router) { }
+appEmailDomains= DEFAULT_EMAIL_DOMAINS
 
-  login(email: string, password: string): void {
-    //todo for now we are not handling th data
+  constructor(private userService: UserService, private router: Router) { }
+
+  login(loginForm: NgForm): void {
+  // console.log(loginForm.value);
+
+  if(loginForm.invalid){
+    return
+  }
     this.userService.login()
     this.router.navigate(['/'])
   }

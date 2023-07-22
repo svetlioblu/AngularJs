@@ -26,7 +26,7 @@ export class ApiService {
     return this.http.get<Post[]>(`${appUrl}/posts${limitFilter}`);
   }
   postTheme(data: any) {
-    const url = '/themes';
+    const url = 'http://localhost:3000/api/themes';
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     return this.http.post<Theme>(url, data, { headers });
