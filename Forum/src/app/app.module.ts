@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FeatureModule } from './feature/feature.module';
 import { UserModule } from './user/user.module';
 
 @NgModule({
@@ -28,7 +27,7 @@ import { UserModule } from './user/user.module';
   ],
   //Import the core and http module
   imports: [BrowserModule, CoreModule, HttpClientModule,
-    SharedModule, AppRoutingModule, UserRoutingModule, ThemeModule, FeatureModule, UserModule],
+    SharedModule, AppRoutingModule, UserRoutingModule, ThemeModule, UserModule],
   providers: [],
   bootstrap: [AppComponent],
 })

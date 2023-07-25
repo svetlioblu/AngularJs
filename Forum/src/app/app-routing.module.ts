@@ -9,8 +9,13 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {
     path: '',
-    loadChildren: () => import('./feature/feature.module').then((m) => m.FeatureModule),
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: '',
+    loadChildren: () => import('./theme/theme.module').then((m) => m.ThemeModule),
+  },
+
   { path: '**', component: NotFoundComponent }
 
 ];
