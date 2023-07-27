@@ -10,17 +10,18 @@ import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/costants';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-appEmailDomains= DEFAULT_EMAIL_DOMAINS
+  appEmailDomains = DEFAULT_EMAIL_DOMAINS
 
   constructor(private userService: UserService, private router: Router) { }
 
   login(loginForm: NgForm): void {
-  // console.log(loginForm.value);
+    // console.log(loginForm.value);
 
-  if(loginForm.invalid){
-    return
-  }
-    this.userService.login()
+    if (loginForm.invalid) {
+      return
+    }
+    const { email, password } = loginForm.value
+    this.userService.login(email, password)
     this.router.navigate(['/'])
   }
 }
