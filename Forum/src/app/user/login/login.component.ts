@@ -21,7 +21,9 @@ export class LoginComponent {
       return
     }
     const { email, password } = loginForm.value
-    this.userService.login(email, password)
-    this.router.navigate(['/'])
+    this.userService.login(email, password).subscribe(()=>{
+
+      this.router.navigate(['/themes'])
+    })
   }
 }
