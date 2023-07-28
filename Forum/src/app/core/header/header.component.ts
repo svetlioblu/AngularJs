@@ -8,7 +8,7 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private userService: UserService, private router:Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   get isLoggedIn(): boolean {
     return this.userService.isLogged
@@ -18,8 +18,15 @@ export class HeaderComponent {
   }
 
   logout(): void {
-    this.userService.logout()
-    this.router.navigate(['/'])
+    this.userService.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/login'])
+      },
+      error: () => {
+        this.router.navigate(['/login'])
+
+      }
+    })
   }
 
 }
