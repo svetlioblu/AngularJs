@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { UserModule } from './user/user.module';
 import { AppInterceptorProvider } from './app.interceptor';
 
 @NgModule({
@@ -28,7 +27,7 @@ import { AppInterceptorProvider } from './app.interceptor';
   ],
   //Import the core and http module
   imports: [BrowserModule, CoreModule, HttpClientModule,
-    SharedModule, AppRoutingModule, UserRoutingModule, ThemeModule, UserModule],
+    SharedModule, AppRoutingModule, UserRoutingModule, ThemeModule],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })

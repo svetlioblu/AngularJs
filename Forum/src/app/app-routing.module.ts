@@ -7,8 +7,9 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
+  // Lazy load not need app.module import
   {
-    path: '',
+    path: 'auth',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   {
