@@ -15,6 +15,7 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { ThemeModule } from './theme/theme.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AppInterceptorProvider } from './app.interceptor';
     PostsListComponent,
     HomeComponent,
     WelcomeComponent,
+    AuthenticateComponent,
   ],
   //Import the core and http module
   imports: [BrowserModule, CoreModule, HttpClientModule,
