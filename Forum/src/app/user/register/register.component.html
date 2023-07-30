@@ -7,7 +7,7 @@
 
             <!-- username -->
             <p class="field field-icon">
-                <label for="username"><span><i class="fas fa-user"></i></span></label>
+                <label for="username"><span><i class="fa fa-user"></i></span></label>
                 <input class="input-error" type="text" name="username" id="username" placeholder="Johny"
                     formControlName="username">
             </p>
@@ -21,7 +21,7 @@
             </ng-container>
             <!-- email -->
             <p class="field field-icon">
-                <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+                <label for="email"><span><i class="fa fa-envelope"></i></span></label>
                 <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" formControlName="email">
             </p>
             <ng-container *ngIf="form.get('email')?.touched">
@@ -30,7 +30,7 @@
             </ng-container>
             <!-- telephone -->
             <p class="field field-icon">
-                <label for="tel"><span><i class="fas fa-phone"></i></span></label>
+                <label for="tel"><span><i class="fa fa-phone"></i></span></label>
                 <select name="select-tel" id="select-tel" class="tel">
                     <option value="00359">+359</option>
                 </select>
@@ -40,7 +40,7 @@
             <ng-container formGroupName="passGroup">
                 <!-- password -->
                 <p class="field field-icon">
-                    <label for="password"><span><i class="fas fa-lock"></i></span></label>
+                    <label for="password"><span><i class="fa fa-lock"></i></span></label>
                     <input name="password" type="password" id="password" placeholder="******"
                         formControlName="password">
                 </p>
@@ -56,7 +56,7 @@
 
                 <!-- rePassword -->
                 <p class="field field-icon">
-                    <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
+                    <label for="rePassword"><span><i class="fa fa-lock"></i></span></label>
                     <input name="rePassword" type="password" id="rePassword" placeholder="******"
                         formControlName="rePassword">
                 </p>
@@ -72,7 +72,7 @@
             >Create Account</button>
             <p class="text-center">
                 Have an account?
-                <a routerLink="auth/login">Log In</a>
+                <a routerLink="/auth/login">Log In</a>
             </p>
 
         </fieldset>
