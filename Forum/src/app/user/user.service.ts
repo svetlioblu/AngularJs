@@ -15,7 +15,7 @@ export class UserService implements OnDestroy {
   user$ = this.user$$.asObservable()
 
   user: User | undefined;
-  USER_KEY = '[user]'
+  // USER_KEY = '[user]'
 
   get isLogged(): boolean {
     return !!this.user
@@ -54,9 +54,18 @@ export class UserService implements OnDestroy {
   }
 
   getProfile() {
-  
-return this.http
+
+    return this.http
       .get<User>('/api/users/profile')
+      .pipe(tap((user) => {
+        this.user$$.next(user)
+      }))
+  }
+
+  updateProfile(username: string, email: string, tel?: string) {
+
+    return this.http
+      .put<User>('/api/users/profile', { username, email, tel })
       .pipe(tap((user) => {
         this.user$$.next(user)
       }))
