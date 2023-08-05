@@ -4,7 +4,11 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  
+  {
+    path: '',
+    loadChildren: () => import('./procedures/procedures.module').then((m) => m.ProceduresModule),
+  }
+
   //todo { path: '**', template: '404' }
 ];
 
