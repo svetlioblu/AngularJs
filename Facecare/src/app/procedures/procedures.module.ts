@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProceduresBoardComponent } from './procedures-board/procedures-board.component';
+import { ProceduresRoutingModule } from './procedures-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { ProceduresBoardComponent } from './procedures-board/procedures-board.co
     ProceduresBoardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProceduresRoutingModule
   ]
 })
 export class ProceduresModule { }
