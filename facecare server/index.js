@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const { auth } = require('./middleWears/authMiddlewear')
 
 mongoose.connect('mongodb://127.0.0.1:27017/facecare')
-    .then(() => { console.log('DB Connected') })
+    .then(() => { console.log('facecare DB Connected') })
     .catch(err => console.log(err))
 
 // This parse query strings. can use both middlewears
