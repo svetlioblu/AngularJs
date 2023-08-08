@@ -25,4 +25,4 @@ const procedureSchema = new mongoose.Schema({
 
 const Procedure = mongoose.model('Procedure', procedureSchema)
 
-module.exports = Furniture
+module.exports = Procedure

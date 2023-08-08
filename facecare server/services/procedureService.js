@@ -1,9 +1,9 @@
-const Furniture = require('../models/Furniture')
+const Procedure = require('../models/Procedure')
 
-exports.create = (furnitureData) => Furniture.create(furnitureData)
+exports.create = (procedureData) => Procedure.create(procedureData)
 
 exports.getAll = async (qs) => {
-    let query = Furniture.find()
+    let query = Procedure.find()
 
     //if no where will take all
     if (qs.where) {

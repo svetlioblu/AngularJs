@@ -1,12 +1,12 @@
 const router = require('express').Router()
 
-const furnitureService = require('../services/furnitureService')
+const procedureService = require('../services/procedureService')
 
 router.get('/', async (req, res) => {
     try {
-        const furnitures = await furnitureService.getAll(req.query)
+        const procedures = await procedureService.getAll(req.query)
 
-        res.status(200).json(furnitures)
+        res.status(200).json(procedures)
     } catch (err) {
         res.status(400).json({
             message: err.message
