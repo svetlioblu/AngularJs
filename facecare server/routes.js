@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const userController = require('./controllers/userController')
-const furnitureController = require('./controllers/furnitureController')
+const procedureController = require('./controllers/procedureController')
 
 router.use('/users', userController)
-router.use('/procedures',furnitureController)
+router.use('/procedures', procedureController)
 
 
 
