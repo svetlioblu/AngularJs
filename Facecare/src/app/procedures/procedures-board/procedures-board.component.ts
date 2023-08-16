@@ -9,18 +9,23 @@ import { Procedure } from 'src/app/types/Procedure';
 })
 export class ProceduresBoardComponent implements OnInit {
   proceduresList: Procedure[] = []
-
+  isLoading: Boolean = true
+  //todo add is loading component 
   constructor(private procedureService: ProcedureService) { }
-  // to do isLoading, userservice
+  // todo  userservice
   ngOnInit(): void {
     this.procedureService.getProcedures().subscribe({
       next: (procedures) => {
-        console.log(procedures);
+        this.proceduresList = procedures
+        this.isLoading = false
       },
       error: (err) => {
+        this.isLoading = false;
         console.error(`Error: ${err}`)
+        //todo no records to show
       }
     })
+
   }
 
 }
