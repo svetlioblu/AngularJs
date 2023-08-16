@@ -9,9 +9,13 @@ import { ProceduresModule } from './procedures/procedures.module';
 import { AppInterceptorProvider } from './app.interceptor';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, ProceduresModule, HttpClientModule],
+  imports: [
+    BrowserModule, AppRoutingModule, CoreModule,
+    ProceduresModule, HttpClientModule],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })

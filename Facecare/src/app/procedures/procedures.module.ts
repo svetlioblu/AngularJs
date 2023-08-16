@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProceduresBoardComponent } from './procedures-board/procedures-board.component';
 import { ProceduresRoutingModule } from './procedures-routing.module';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 
@@ -11,7 +13,8 @@ import { ProceduresRoutingModule } from './procedures-routing.module';
   ],
   imports: [
     CommonModule,
-    ProceduresRoutingModule
+    ProceduresRoutingModule,
+    SharedModule
   ]
 })
 export class ProceduresModule { }
