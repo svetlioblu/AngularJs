@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { ProceduresModule } from './procedures/procedures.module';
+import { AppInterceptorProvider } from './app.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, ProceduresModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, ProceduresModule, HttpClientModule],
+  providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
