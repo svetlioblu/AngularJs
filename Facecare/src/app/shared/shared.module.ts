@@ -13,6 +13,6 @@ import { SlicePipe } from './pipes/slice.pipe';
   imports: [
     CommonModule
   ],
-  exports: [SpinnerComponent]
+  exports: [SpinnerComponent, SlicePipe]
 })
 export class SharedModule { }
