@@ -1,1 +1,83 @@
-<p>procedure-new works!</p>
+<!-- Content -->
+<div class="container content-space-1">
+    <!-- Header -->
+    <div class="text-center mb-7">
+        <div class="mb-3">
+            <a class="link link-secondary" routerLink="/procedures"><i class="bi-arrow-left small me-1"></i>Back</a>
+        </div>
+        <h1>add new</h1>
+    </div>
+    <!-- End Header -->
+
+    <div class="w-lg-75 mx-lg-auto">
+        <!-- Card -->
+        <div class="card card-shadow">
+            <div class="card-body p-sm-7 p-md-10">
+                <form #form="ngForm" (ngSubmit)="newProcedureSubmitHandler(form)">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label class="form-label" for="label">Label</label>
+                                <input type="text" class="form-control form-control-lg" name="label" id="label"
+                                    placeholder="Label" aria-label="Label">
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label class="form-label" for="therapist">Therapist</label>
+                                <input type="text" class="form-control form-control-lg" name="therapist" id="therapist"
+                                    placeholder="Therapist" aria-label="Therapist">
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label class="form-label" for="price">Price</label>
+                                <input type="number" class="form-control form-control-lg" name="price" id="price"
+                                    placeholder="Price" aria-label="Price">
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label class="form-label" for="img">Image URL</label>
+                                <input type="text" class="form-control" name="img" id="img" placeholder="Image URL"
+                                    aria-label="Image URL">
+                            </div>
+                            <!-- End Form -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+
+                    <!-- Form -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" name="description" id="description"
+                            placeholder="Add a description or anything else you want to share."
+                            aria-label="Add a description or anything else you want to share." rows="5"></textarea>
+                    </div>
+                    <!-- End Form -->
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-outline-success btn-lg">Add Prpcedure</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Card -->
+    </div>
+</div>
+<!-- End Content -->
