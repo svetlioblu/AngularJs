@@ -20,8 +20,18 @@
                             <div class="mb-4">
                                 <label class="form-label" for="label">Label</label>
                                 <input type="text" class="form-control form-control-lg" name="label" id="label"
-                                    placeholder="Label" aria-label="Label">
+                                    placeholder="Label" aria-label="Label"
+                                    ngModel 
+                                    #inputLabel="ngModel"
+                                    required
+                                    minlength="3"
+                                    >
                             </div>
+                            <ng-container *ngIf="inputLabel.touched">
+                                <p class="alert alert-warning" *ngIf="inputLabel.errors?.['required']">Label is required.</p>
+                                <p class="alert alert-success" *ngIf="inputLabel.errors?.['minlength']">Label must be at least 3
+                                    characters long.</p>
+                            </ng-container>
                             <!-- End Form -->
                         </div>
                         <!-- End Col -->
@@ -31,8 +41,17 @@
                             <div class="mb-4">
                                 <label class="form-label" for="therapist">Therapist</label>
                                 <input type="text" class="form-control form-control-lg" name="therapist" id="therapist"
-                                    placeholder="Therapist" aria-label="Therapist">
+                                    placeholder="Therapist" aria-label="Therapist"
+                                    ngModel 
+                                    #inputTherapist="ngModel"
+                                    required
+                                    minlength="5">
                             </div>
+                            <ng-container *ngIf="inputTherapist.touched">
+                                <p class="alert alert-warning" *ngIf="inputTherapist.errors?.['required']">Therapist name is required.</p>
+                                <p class="alert alert-success" *ngIf="inputTherapist.errors?.['minlength']">Therapist name must be at least 5
+                                    characters long.</p>
+                            </ng-container>
                             <!-- End Form -->
                         </div>
                         <!-- End Col -->
@@ -44,8 +63,16 @@
                             <div class="mb-4">
                                 <label class="form-label" for="price">Price</label>
                                 <input type="number" class="form-control form-control-lg" name="price" id="price"
-                                    placeholder="Price" aria-label="Price">
+                                    placeholder="Price" aria-label="Price"
+                                    ngModel 
+                                    #inputPrice="ngModel"
+                                    required
+                                    min="50">
                             </div>
+                            <ng-container *ngIf="inputPrice.touched">
+                                <p class="alert alert-warning"  *ngIf="inputPrice.errors?.['required']">Price is required.</p>
+                                <p class="alert alert-success"  *ngIf="inputPrice.errors?.['min']">Price must be greater than 50</p>
+                            </ng-container>
                             <!-- End Form -->
                         </div>
                         <!-- End Col -->
@@ -55,8 +82,17 @@
                             <div class="mb-4">
                                 <label class="form-label" for="img">Image URL</label>
                                 <input type="text" class="form-control" name="img" id="img" placeholder="Image URL"
-                                    aria-label="Image URL">
+                                    aria-label="Image URL"
+                                    ngModel 
+                                    #inputImg="ngModel"
+                                    required
+                                    pattern="^(https?|ftp)://[^\s/$.?#].[^\s]*$"
+                                    >
                             </div>
+                            <ng-container *ngIf="inputImg.touched">
+                                <p class="alert alert-warning"  *ngIf="inputImg.errors?.['required']">Image URL is required.</p>
+                                <p class="alert alert-success"  *ngIf="inputImg.errors?.['pattern']">Image URL is not valid.</p>
+                            </ng-container>
                             <!-- End Form -->
                         </div>
                         <!-- End Col -->
@@ -67,12 +103,19 @@
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" name="description" id="description"
                             placeholder="Add a description or anything else you want to share."
-                            aria-label="Add a description or anything else you want to share." rows="5"></textarea>
+                            aria-label="Add a description or anything else you want to share." rows="5"
+                            ngModel 
+                            #inputDescription="ngModel"
+                            required
+                            minlength="15"></textarea>
                     </div>
+                    <ng-container *ngIf="inputDescription.touched">
+                                <p class="alert alert-warning"  *ngIf="inputDescription.errors?.['required']">Description is required.</p>
+                                <p class="alert alert-success"  *ngIf="inputDescription.errors?.['minlength']">The Description should be at least 15 characters.</p>
+                            </ng-container>
                     <!-- End Form -->
-
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-outline-success btn-lg">Add Prpcedure</button>
+                        <button type="submit" class="btn btn-outline-success btn-lg" [disabled]="form.invalid">Add Prpcedure</button>
                     </div>
                 </form>
             </div>
