@@ -30,10 +30,12 @@ router.post('/', async (req, res) => {
 
 })
 
-router.get('/:furnitureId', async (req, res) => {
+router.get('/:procedureId', async (req, res) => {
     try {
-        const furniture = await furnitureService.getOne(req.params.furnitureId)
-        res.json(furniture)
+        console.log(req.params.procedureId);
+        const procedure = await procedureService.getOne(req.params.procedureId)
+        console.log(procedure);
+        res.json(procedure)
     } catch (err) {
         res.status(400).json({ error: error.message })
     }

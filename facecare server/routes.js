@@ -6,5 +6,4 @@ router.use('/users', userController)
 router.use('/procedures', procedureController)
 
 
-
 module.exports = router
