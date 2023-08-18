@@ -13,7 +13,7 @@ export class ProcedureDetailsComponent implements OnInit {
 
   procedure: Procedure | undefined
 
-  //todo inject private userService: UserService when ready
+  //? inject private userService: UserService if need to show/hide 
   constructor(
     private procedureService: ProcedureService,
     private activatedRoute: ActivatedRoute) { }
