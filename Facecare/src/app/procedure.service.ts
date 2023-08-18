@@ -17,4 +17,9 @@ export class ProcedureService {
     const { apiUrl } = environment
     return this.http.get<Procedure[]>(`${apiUrl}/procedures`)
   }
+
+  getDetails(id: string) {
+    const { apiUrl } = environment;
+    return this.http.get<Procedure>(`${apiUrl}/procedures/${id}`);
+  }
 }
