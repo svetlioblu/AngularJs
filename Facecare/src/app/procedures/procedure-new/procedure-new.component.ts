@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-procedure-new',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class ProcedureNewComponent {
 
+  newProcedureSubmitHandler(newProcedureForm: NgForm) {
+    if (newProcedureForm.invalid) {
+      return
+    }
+
+
+  }
 }
