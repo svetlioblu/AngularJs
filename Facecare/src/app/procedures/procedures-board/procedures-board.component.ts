@@ -10,7 +10,7 @@ import { Procedure } from 'src/app/types/Procedure';
 export class ProceduresBoardComponent implements OnInit {
   proceduresList: Procedure[] = []
   isLoading: Boolean = true
-  //todo add is loading component 
+  
   constructor(private procedureService: ProcedureService) { }
   // todo  userservice
   ngOnInit(): void {

@@ -11,7 +11,7 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class CurrentThemeComponent implements OnInit {
   theme: Theme | undefined
-  //use ActivatedRoute to take the i fro mthe router
+  //use ActivatedRoute to take the i from the router
   constructor(private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
     private userService: UserService) { }
