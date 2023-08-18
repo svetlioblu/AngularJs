@@ -4,6 +4,7 @@ import { ProceduresBoardComponent } from './procedures-board/procedures-board.co
 import { ProceduresRoutingModule } from './procedures-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ProcedureDetailsComponent } from './procedure-details/procedure-details.component';
+import { ProcedureNewComponent } from './procedure-new/procedure-new.component';
 
 
 
@@ -11,7 +12,8 @@ import { ProcedureDetailsComponent } from './procedure-details/procedure-details
 @NgModule({
   declarations: [
     ProceduresBoardComponent,
-    ProcedureDetailsComponent
+    ProcedureDetailsComponent,
+    ProcedureNewComponent
   ],
   imports: [
     CommonModule,
