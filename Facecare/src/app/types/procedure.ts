@@ -1,8 +1,9 @@
 export interface Procedure {
-    description: string
-    img: string;
-    label: string,
-    price: number;
-    __v: number;
     _id: string,
+    label: string,
+    description: string,
+    therapist: string,
+    price: number,
+    img: string,
+    __v: number
 }
