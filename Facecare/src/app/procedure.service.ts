@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 
 import { environment } from 'src/environments/environment.development';
-import { Procedure } from './types/Procedure';
+import { Procedure } from './types/procedure';
 import { HttpClient } from '@angular/common/http';
 
 
