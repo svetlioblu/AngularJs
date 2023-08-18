@@ -9,6 +9,10 @@ const procedureSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    therapist: {
+        type: String,
+        required: true
+    },
     price: {
         type: Number,
         required: true

@@ -15,7 +15,7 @@ exports.getAll = async (qs) => {
     return result
 }
 
-exports.getOne = (ownerId) => Furniture.findById(ownerId)
+exports.getOne = (procedureId) => Procedure.findById(procedureId)
 
 exports.update = (furnitureId, data) => Furniture.findByIdAndUpdate(furnitureId, data)
 
