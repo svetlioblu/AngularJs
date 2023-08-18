@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProcedureService } from 'src/app/procedure.service';
-import { Procedure } from 'src/app/types/Procedure';
+import { Procedure } from 'src/app/types/procedure';
 
 @Component({
   selector: 'app-procedures-board',
