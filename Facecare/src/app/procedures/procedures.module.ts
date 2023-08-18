@@ -5,6 +5,7 @@ import { ProceduresRoutingModule } from './procedures-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ProcedureDetailsComponent } from './procedure-details/procedure-details.component';
 import { ProcedureNewComponent } from './procedure-new/procedure-new.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { ProcedureNewComponent } from './procedure-new/procedure-new.component';
   imports: [
     CommonModule,
     ProceduresRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class ProceduresModule { }
