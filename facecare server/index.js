@@ -4,6 +4,7 @@ const routes = require('./routes')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
+
 const { auth } = require('./middleWears/authMiddlewear')
 
 mongoose.connect('mongodb://127.0.0.1:27017/facecare')
@@ -16,14 +17,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 //CORS settings with 3 options config.
 app.use(cors()) 
-// app.use(function (req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', '*')
-//     res.setHeader('Access-Control-Allow-Methods',
-//         'OPTIONS,GET,POST,PUT,PATCH,DELETE')
-//     res.setHeader('Access-Control-Allow-Headers','*')
-
-//     next()
-// })
 
 app.get('/', (req, res) => res.send('Hello from RESTful server'))
 
