@@ -52,9 +52,9 @@ router.put('/:furnitureId', async (req, res) => {
     }
 })
 
-router.delete('/:furnitureId', async (req, res) => {
+router.delete('/:procedureId', async (req, res) => {
     try {
-         await furnitureService.delete(req.params.furnitureId)
+         await procedureService.delete(req.params.procedureId)
        res.status(204).end()
     } catch (err) {
         res.status(400).json({ error: error.message })

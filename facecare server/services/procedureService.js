@@ -19,6 +19,6 @@ exports.getOne = (procedureId) => Procedure.findById(procedureId)
 
 exports.update = (furnitureId, data) => Furniture.findByIdAndUpdate(furnitureId, data)
 
-exports.delete = (furnitureId) => Furniture.findByIdAndDelete(furnitureId)
+exports.delete = (procedureId) => Procedure.findByIdAndDelete(procedureId)
 
 
