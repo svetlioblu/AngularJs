@@ -6,14 +6,15 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   {
     path: '',
-    loadChildren: () => import('./procedures/procedures.module').then((m) => m.ProceduresModule),
+    loadChildren: () => import('./procedures/procedures.module').then((m) => m.ProceduresModule)
   }
 
   //todo { path: '**', template: '404' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  //todo fix static files from the server side
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
