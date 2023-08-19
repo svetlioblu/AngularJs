@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ProceduresModule } from './procedures/procedures.module';
 import { AppInterceptorProvider } from './app.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { UserRoutingModule } from './user/user-routing.module';
 
 
 
@@ -16,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule, AppRoutingModule, CoreModule,
-    ProceduresModule, HttpClientModule],
+    ProceduresModule, UserRoutingModule, HttpClientModule],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })

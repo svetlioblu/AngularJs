@@ -9,6 +9,26 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    tel: {
+        type: String,
+        required: true
+    },
+    _procedureId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Procedure'
     }
 
 })

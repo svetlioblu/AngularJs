@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-        console.log(req.body)
+      
         await procedureService.create({
             ...req.body
             // ?add ownerId if needs

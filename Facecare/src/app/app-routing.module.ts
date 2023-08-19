@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./procedures/procedures.module').then((m) => m.ProceduresModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   }
 
   //todo { path: '**', template: '404' }

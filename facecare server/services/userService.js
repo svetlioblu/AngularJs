@@ -27,13 +27,15 @@ exports.login = async ({ email, password }) => {
 function getAuthResult(user) {
     const payload = {
         _id: user._id,
-        email: user.email
+        email: user.email,
+        firstName: user.firstName
     }
     const token = jwt.sign(payload, 'SECRETsecret', { expiresIn: '2d' })
 
     const result = {
         _id: user._id,
         email: user.email,
+        firstName: user.firstName,
         accessToken: token,
     }
     return result

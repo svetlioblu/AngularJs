@@ -3,10 +3,11 @@ const router = require('express').Router()
 const userService = require('../services/userService')
 
 router.post('/register', async (req, res) => {
-    const { email, password } = req.body
+    const { email, password, firstName, lastName, age, tel } = req.body
 
     try {
-        const result = await userService.register({ email, password })
+        //todo will add _procedureId:
+        const result = await userService.register({ ...req.body})
         res.json(result)
     } catch (err) {
         console.log(err)
