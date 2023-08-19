@@ -16,8 +16,16 @@ app.use(express.urlencoded({ extended: false }))
 //RESTful recieves JSON post data(AJAX), regardless MPA , where used the above middlewear
 app.use(express.json())
 //CORS settings with 3 options config.
-app.use(cors()) 
+// app.use(cors()) 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Methods',
+        'OPTIONS,GET,POST,PUT,PATCH,DELETE')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Authorization')
 
+    next()
+})
 app.get('/', (req, res) => res.send('Hello from RESTful server'))
 
 

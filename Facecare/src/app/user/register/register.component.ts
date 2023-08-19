@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +13,8 @@ export class RegisterComponent {
   confirmPasswordModel: string = '';
   misMatch: string = ''
 
+  constructor(private userService: UserService, private router: Router) { }
+
   registerSubmitHandler(registerForm: NgForm) {
     if (registerForm.invalid) {
       return
@@ -21,7 +25,20 @@ export class RegisterComponent {
     } else {
       this.misMatch = ''
     }
+
+    const { firstName, lastName, age, tel, email, password } = registerForm.value
+
+    this.userService.register(firstName,
+      lastName,
+      age,
+      tel,
+      email,
+      password).subscribe(() => {
+        this.router.navigate(['/'])
+      })
+
   }
-  
+
+
 
 }
