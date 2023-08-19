@@ -12,7 +12,6 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   }
-
   //todo { path: '**', template: '404' }
 ];
 
