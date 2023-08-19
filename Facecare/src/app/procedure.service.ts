@@ -22,4 +22,11 @@ export class ProcedureService {
     const { apiUrl } = environment;
     return this.http.get<Procedure>(`${apiUrl}/procedures/${id}`);
   }
+
+  createProcedure(label:string, description:string, therapist:string, price:number, img:string) {
+    const { apiUrl } = environment;
+
+    return this.http.post<Procedure>(`${apiUrl}/procedures/add`, { label, description, therapist, price, img });
+  }
+
 }
