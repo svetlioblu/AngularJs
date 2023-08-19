@@ -14,11 +14,13 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
-        await furnitureService.create({
-            ...req.body,
-            _ownerId: req.user._id
+        console.log(req.body)
+        await procedureService.create({
+            ...req.body
+            // ?add ownerId if needs
+            // ,_ownerId: req.user._id
         })
 
         res.status(201).end()

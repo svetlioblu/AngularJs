@@ -11,21 +11,6 @@ import { ApiService } from 'src/app/api.service';
 export class NewThemeComponent {
   constructor(private apiService: ApiService, private router: Router) { }
 
-  // postThemeHandler(event: Event, themeName: string, postText: string) {
-  //   event.preventDefault()
-  //   console.log(themeName, postText);
-  //   this.apiService.postTheme({ themeName, postText }).subscribe(
-  //     responce => {
-  //       console.log('Response:', responce);
-  //       // Handle the response as needed
-  //     },
-  //     error => {
-  //       console.error('Error:', error);
-  //       // Handle the error as needed
-  //     }
-  //   )
-  // }
-
   newTeamSubmitHandler(newThemeForm: NgForm) {
     if (newThemeForm.invalid) {
       return
