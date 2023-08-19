@@ -29,4 +29,9 @@ export class ProcedureService {
     return this.http.post<Procedure>(`${apiUrl}/procedures/add`, { label, description, therapist, price, img });
   }
 
+  deleteProcedure(id: string) {
+    const { apiUrl } = environment;
+    return this.http.delete<Procedure>(`${apiUrl}/procedures/${id}`);
+  }
+
 }
