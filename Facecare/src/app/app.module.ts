@@ -12,10 +12,11 @@ import { UserRoutingModule } from './user/user-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { NoExistsComponent } from './errors/no-exists/no-exists.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, NoExistsComponent],
   imports: [
     BrowserModule, AppRoutingModule, CoreModule,
     ProceduresModule, UserRoutingModule, HttpClientModule,SharedModule,FormsModule],

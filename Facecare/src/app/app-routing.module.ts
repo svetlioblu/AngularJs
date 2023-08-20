@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NoExistsComponent } from './errors/no-exists/no-exists.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   }
-  //todo { path: '**', template: '404' }
+//  { path: '**', component: NoExistsComponent}
 ];
 
 @NgModule({
