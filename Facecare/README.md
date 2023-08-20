@@ -28,3 +28,5 @@ Run `npm start` within server directory
 - Only admin user to be able to Add, Edit and Delete procedures. The users should be ablle to add only procedures to their profile.
 - The Admin should be able to search for a user and display his profile page
 - Add Stars Rating per procedure only for the users
+- Implement user-logged in persistance on browser refresh
+- fix the server side routing issue to remove useHash policy from app-routing
