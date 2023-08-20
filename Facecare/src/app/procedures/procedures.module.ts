@@ -9,8 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { NoProceduresComponent } from '../errors/no-procedures/no-procedures.component';
 
 
-
-
 @NgModule({
   declarations: [
     ProceduresBoardComponent,
