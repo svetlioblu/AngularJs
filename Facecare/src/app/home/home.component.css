@@ -1,8 +1,11 @@
 span.text-cap {
-font-family: Inter;
+    font-family: Inter;
 }
 
 /* button.btn.btn-primary.btn-lg {
     background-color:#F9EBE8;
 } */
 
+.valid-button {
+    border: solid 3px green ;
+}

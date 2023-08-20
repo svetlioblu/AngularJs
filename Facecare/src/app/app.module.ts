@@ -11,13 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserRoutingModule } from './user/user-routing.module';
 
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule, AppRoutingModule, CoreModule,
-    ProceduresModule, UserRoutingModule, HttpClientModule,SharedModule],
+    ProceduresModule, UserRoutingModule, HttpClientModule,SharedModule,FormsModule],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })

@@ -10,17 +10,25 @@
   
       <div class="w-lg-65 mx-lg-auto">
         <!-- Input Card -->
-        <form>
+        <form *ngIf="!isLoggedIn" #form="ngForm" (ngSubmit)="loginSubmitHandler(form)">
           <div class="input-card input-card-sm">
             <div class="input-card-form">
-              <label for="nameRegisterForm" class="form-label visually-hidden">Enter your name</label>
-              <input type="text" class="form-control form-control-lg" id="nameRegisterForm" placeholder="Your name" aria-label="Your name">
+              <label for="nameRegisterForm" class="form-label visually-hidden">Enter your email</label>
+              <input type="text" class="form-control form-control-lg" name="email" id="nameRegisterForm" placeholder="Your email" aria-label="Your email"
+              ngModel
+              #inputEmail="ngModel"
+              required
+              email="email">
             </div>
             <div class="input-card-form">
-              <label for="emailRegisterForm" class="form-label visually-hidden">Enter email</label>
-              <input type="text" class="form-control form-control-lg" id="emailRegisterForm" placeholder="Your email" aria-label="Your email">
+              <label for="emailRegisterForm" class="form-label visually-hidden">Enter password</label>
+              <input type="password" class="form-control form-control-lg" id="emailRegisterForm" name="password" placeholder="Your Password" aria-label="Your Password"
+              ngModel
+              #inputPassword="ngModel"
+              required
+              minlength="8">
             </div>
-            <button type="button" class="btn btn-success btn-lg">Get started</button>
+            <button type="submit" class="btn btn-success btn-lg"[class.valid-button]="form.valid" [disabled]="form.invalid">Get started</button>
           </div>
         </form>
         <!-- End Input Card -->
