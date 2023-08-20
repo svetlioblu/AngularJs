@@ -1,27 +1,32 @@
 # Facecare
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+## To start
 
-## Development server
+- Development client server <br/>
+Run `npm i` within server directory to install the dependencies <br/>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
+- RESTful Node.js server <br/>
+Can find it into https://github.com/svetlioblu/AngularJs/tree/main/facecare%20server <br/>
+Run `npm i` within server directory to install the dependencies <br/>
+Run `npm start` within server directory
+- MongoDB required
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Login, Register, Logout / users
+- Conditional rendering  if a user is logged or a guest
+- My Profile (! in process of development)
+- Dynamic procedures List
+- CRUD operations on the Dynamic procedures List (! Edit is in process of development)
+- Details on procedures List item
+- In Module Routing (forChild)
+- Template-driven form inline validations
+- Lazy loading
+- Spinner on fetching data into the procedures List
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Next
+- My Profile page to display the added procedures per user plus user details(age, tel, last procedure time, next procedure time, achievements)
+- Only admin user to be able to Add, Edit and Delete procedures. The users should be ablle to add only procedures to their profile.
+- The Admin should be able to search for a user and display his profile page
+- Add Stars Rating per procedure only for the users
+- Implement user-logged in persistance on browser refresh
+- fix the server side routing issue to remove useHash policy from app-routing
