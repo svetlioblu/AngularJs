@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProcedureService } from 'src/app/procedure.service';
 import { Procedure } from 'src/app/types/procedure';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-procedure-details',
@@ -16,9 +17,13 @@ export class ProcedureDetailsComponent implements OnInit {
   //? inject private userService: UserService if need to show/hide 
   constructor(
     private procedureService: ProcedureService,
+    private userService:UserService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { }
-
+    
+    get isLoggedIn(): boolean {
+      return this.userService.isLogged
+    }
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['procedureId']
 

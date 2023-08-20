@@ -34,7 +34,7 @@
       </div>
       <!-- End Row -->
       <!-- todo if owner or admin -->
-      <ng-container>
+      <ng-container *ngIf="isLoggedIn">
         <a class="btn"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: #077C76" ></i></a>
         <a class="btn" (click)="del()"><i class="bi bi-trash3" style="font-size: 2rem; color: red;"></i></a>
       </ng-container>
