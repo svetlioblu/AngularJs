@@ -22,3 +22,9 @@ Run `npm start` within server directory
 - Template-driven form inline validations
 - Lazy loading
 - Spinner on fetching data into the procedures List
+
+## Next
+- My Profile page to display the added procedures per user plus user details(age, tel, last procedure time, next procedure time, achievements)
+- Only admin user to be able to Add, Edit and Delete procedures. The users should be ablle to add only procedures to their profile.
+- The Admin should be able to search for a user and display his profile page
+- Add Stars Rating per procedure only for the users
