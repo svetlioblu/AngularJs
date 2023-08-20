@@ -1,1 +1,102 @@
-<p>login works!</p>
+<!-- Content -->
+<div class="container content-space-1">
+    <div class="mx-lg-auto" style="max-width: 55rem;">
+        <div class="position-relative">
+            <!-- Card -->
+            <div class="card card-shadow card-login">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <!-- Form -->
+                            <form #form="ngForm" (ngSubmit)="loginSubmitHandler(form)">
+                                <div class="text-center">
+                                    <div class="mb-5">
+                                        <h3 class="card-title">Log in</h3>
+                                    </div>
+                                </div>
+
+                            
+
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="signupSrEmail">Your email</label>
+                                    <input type="email" class="form-control form-control-lg" name="email"
+                                        id="signupSrEmail" placeholder="Markwilliams@site.com"
+                                        aria-label="Markwilliams@site.com" ngModel #inputEmail="ngModel" required
+                                        email="email">
+                                </div>
+                                <ng-container *ngIf="inputEmail.touched">
+                                    <p class="alert alert-warning" *ngIf="inputEmail.errors?.['required']">
+                                        Email is required.</p>
+                                    <p class="alert alert-success" *ngIf="inputEmail.errors?.['email']">
+                                        The email is not valid.</p>
+
+                                </ng-container>
+                                <!-- End Form -->
+
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label class="form-label" for="signupSrPassword">Password</label>
+
+                                    <input type="password" class="js-toggle-password form-control form-control-lg"
+                                        name="password" id="signupSrPassword" placeholder="8+ characters required"
+                                        aria-label="8+ characters required" 
+                                        ngModel 
+                                        #inputPassword="ngModel"
+                                       
+                                        required
+                                        minlength="8">
+
+                                </div>
+                                <ng-container *ngIf="inputPassword.touched">
+                                    <p class="alert alert-warning" *ngIf="inputPassword.errors?.['required']">
+                                        Password is required.</p>
+                                    <p class="alert alert-success" *ngIf="inputPassword.errors?.['minlength']">
+                                        Name must be at least 8 chars.</p>
+
+                                </ng-container>
+                                <!-- End Form -->
+
+                                <div class="d-grid gap-4">
+                                    <button type="submit" class="btn btn-success btn-lg" [disabled]="form.invalid">Log to your account</button>
+                                    <p class="card-text text-muted">Dont have account? <a class="link link-success"
+                                            routerLink="/user/register">Sign Up</a></p>
+                                </div>
+                            </form>
+                            <!-- End Form -->
+                        </div>
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-md-4 d-md-flex justify-content-center flex-column bg-soft-primary p-8 p-md-5"
+                        style="background-image: url(../assets/svg/components/wave-pattern.svg);">
+                        <h5 class="mb-4">Follow your progress with Facecare:</h5>
+
+                        <!-- List Checked -->
+                        <ul class="list-checked list-checked-primary list-py-2">
+                            <li class="list-checked-item">The real nature of anti-aging prevention</li>
+                            <li class="list-checked-item">Easily add & manage your procedures</li>
+                        </ul>
+                        <!-- End List Checked -->
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Card -->
+
+            <!-- SVG Shape -->
+            <figure class="position-absolute top-0 end-0 zi-n1 d-none d-sm-block mt-n7 me-n10" style="width: 4rem;">
+                <img class="img-fluid" src="./assets/svg/components/pointer-up.svg" alt="Image Description">
+            </figure>
+            <!-- End SVG Shape -->
+
+            <!-- SVG Shape -->
+            <figure class="position-absolute bottom-0 start-0 d-none d-sm-block ms-n10 mb-n10" style="width: 15rem;">
+                <img class="img-fluid" src="../assets/svg/components/curved-shape.svg" alt="Image Description">
+            </figure>
+            <!-- End SVG Shape -->
+        </div>
+    </div>
+</div>
+<!-- End Content -->
