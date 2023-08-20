@@ -29,7 +29,7 @@
                     <li class="nav-item">
                         <a class="nav-link" routerLink="procedures">Procedures</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="isLoggedIn">
                         <a class="nav-link" href="#"><i class="bi-person nav-icon"></i>{{username}} profile</a>
                     </li>
                     <!-- show add only if admin -->
