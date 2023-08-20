@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProcedureDetailsComponent } from './procedure-details/procedure-details.component';
 import { ProcedureNewComponent } from './procedure-new/procedure-new.component';
 import { FormsModule } from '@angular/forms';
+import { NoProceduresComponent } from '../errors/no-procedures/no-procedures.component';
 
 
 
@@ -14,13 +15,13 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     ProceduresBoardComponent,
     ProcedureDetailsComponent,
-    ProcedureNewComponent
+    ProcedureNewComponent,NoProceduresComponent
   ],
   imports: [
     CommonModule,
     ProceduresRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ProceduresModule { }

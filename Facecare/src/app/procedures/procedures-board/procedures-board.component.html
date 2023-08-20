@@ -6,8 +6,9 @@
         <h2>Our services designed from experienced professionals</h2>
     </div>
     <!-- End Heading -->
+    <div id="noProcedures-wrapper" *ngIf="!proceduresList"><app-no-procedures /></div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" *ngIf="proceduresList">
         <div class="col mb-5 mb-md-0" *ngFor="let card of proceduresList">
             <!-- Card -->
             <a class="card card-ghost card-transition-zoom h-100" [routerLink]="card._id">
