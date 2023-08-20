@@ -10,14 +10,14 @@ import { AppInterceptorProvider } from './app.interceptor';
 import { HttpClientModule } from '@angular/common/http';
 import { UserRoutingModule } from './user/user-routing.module';
 
-
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule, AppRoutingModule, CoreModule,
-    ProceduresModule, UserRoutingModule, HttpClientModule],
+    ProceduresModule, UserRoutingModule, HttpClientModule,SharedModule],
   providers: [AppInterceptorProvider],
   bootstrap: [AppComponent],
 })

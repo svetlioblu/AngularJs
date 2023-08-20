@@ -51,10 +51,9 @@ export class UserService implements OnDestroy{
   logout() {
 
     return this.http
-      .post<User>('/api/logout', {})
-      .pipe(tap(() => this.user$$.next(undefined)))
+      .post<User>('/api/users/logout', {})
+      .pipe(tap(() => this.user$$.next(undefined) ))
   }
-
 
    ngOnDestroy(): void {
     this.subscription.unsubscribe()

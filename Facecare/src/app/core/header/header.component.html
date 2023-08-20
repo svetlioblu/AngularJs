@@ -30,30 +30,29 @@
                         <a class="nav-link" routerLink="procedures">Procedures</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi-person nav-icon"></i>My Profile</a>
+                        <a class="nav-link" href="#"><i class="bi-person nav-icon"></i>{{username}} Profile</a>
                     </li>
                     <!-- show add only if admin -->
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="isLoggedIn">
                         <a class="nav-link" routerLink="procedures/add">Add</a>
                     </li>
                    
                     <!-- Log in -->
-                    <li class="nav-item ms-lg-auto">
+                    <li class="nav-item ms-lg-auto" *ngIf="!isLoggedIn">
                         <a class="btn btn-outline-success me-2 me-lg-0" routerLink="/user/login">Log in</a>
                         <a class="btn btn-dark d-lg-none" routerLink="/user/register">Sign up</a>
                     </li>
                     <!-- End Log in -->
 
                     <!-- Sign up -->
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="!isLoggedIn">
                         <a class="btn btn-dark d-none d-lg-inline-block" routerLink="/user/register">Sign up</a>
                     </li>
                     <!-- End Sign up -->
 
-                        <!--todo Log OUt if logged user -->
-                        <!-- <li class="nav-item">
-                            <a class="btn btn-dark d-none d-lg-inline-block" href="../page-signup.html">Log out</a>
-                        </li> -->
+                        <li class="nav-item ms-lg-auto" *ngIf="isLoggedIn">
+                            <a class="btn btn-dark d-none d-lg-inline-block" (click)="logout()">Log out</a>
+                        </li>
                         <!-- Log out -->
                 </ul>
                 <!-- End Navbar -->
